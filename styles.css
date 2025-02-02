@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 80%;
+    height: 80%;
+}
+
+.shuffle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.player-hands {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    z-index: 2;
+}
+
+.player-hand {
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player1-hand {
+    top: 0;
+    left: 0;
+}
+
+#player2-hand {
+    top: 0;
+    right: 0;
+}
+
+#player3-hand {
+    bottom: 0;
+    left: 0;
+}
+
+#player4-hand {
+    bottom: 0;
+    right: 0;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    transform: scale(0.5); /* Initially smaller */
+}
+
+#shuffle-btn {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#shuffle-btn:hover {
+    background-color: #45a049;
+}
+
+@keyframes shuffleAnimation {
+    0% {
+        transform: rotate(0deg);
+        top: 0;
+        left: 0;
+    }
+    25% {
+        transform: rotate(90deg);
+        top: 0;
+        left: 50%;
+    }
+    50% {
+        transform: rotate(180deg);
+        top: 50%;
+        left: 50%;
+    }
+    75% {
+        transform: rotate(270deg);
+        top: 50%;
+        left: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+        top: 100%;
+        left: 0;
+    }
+}
